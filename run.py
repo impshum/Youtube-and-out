@@ -67,10 +67,10 @@ def main():
         if not db.exists(id):
             if reddit_on:
                 print(f'Posting {title} to Reddit')
-                #reddit.subreddit(target_subreddit).submit(title=title, url=url)
+                reddit.subreddit(target_subreddit).submit(title=title, url=url)
             if twitter_on:
                 print(f'Posting {title} to Twitter')
-                # api.update_status(f'{title} {url}')
+                api.update_status(f'{title} {url}')
 
             db.set(id, title)
             db.dump()
